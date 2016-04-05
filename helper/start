@@ -1,0 +1,2 @@
+!/bin/bash
+./egcpops -c sample/config

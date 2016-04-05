@@ -1,0 +1,57 @@
+文頭の#はコメントアウト 空行を入れたいときなどに
+
+EGC_HOSTNUM=%d
+	必須：以降に記述される拠点数
+EGC_PACKET_SIZE=%d
+	通信のパケットコンテナサイズ(デフォルト1KB:MTU1500依存)
+
+
+以降のタグ側(=より左)の%dはジョブ番号になる
+EGC_JOBID%d=%d
+	単なる見出し、効力はない
+EGC_HOSTNAME%d=%s
+	必須：拠点のログインノード名
+EGC_SSHPORT%d=%d
+	拠点のログインノードにSSH接続するポート番号(デフォルト:22)
+EGC_HOSTPORT%d=%s
+	拠点のログインノードで待ち受ける(LISTEN)ポート番号(デフォルト：37510)
+EGC_PROXYPORT%d=%s
+	接続者がSSHプロキシとして用意するHOSTPORTのプロキシポート(デフォルト：37511)
+EGC_JOBSUBMIT%d=%s
+	必須：拠点毎のジョブ投入命令/ログインノードで実行されるコマンドでもある
+EGC_INTRA_MODE%d=%s
+	拠点のイントラ通信につかうプロトコル(socket|file)、今はfile のみ有効
+EGC_INTRA_HOST_LISTENPATH%d=%s
+	必須：(for file)拠点内部で通信ファイル基部を伝える(メタ)ファイルの名前
+	フルパス指定か、ホームからの相対指定
+EGC_INTRA_HOST_DATAPATH%d=%s
+	必須：(for file)拠点内部で通信を行うファイル名の基部
+	フルパス指定か、ホームからの相対指定
+EGC_INTRA_SIG_LISTEN%d=%d
+	(for file)非同期通信用のシグナル指定(デフォルト:RTMIN+1)
+EGC_INTRA_SIG_DATA%d=%d
+	(for file)非同期通信用のシグナル指定(デフォルト:RTMIN+2)
+EGC_POPSERV_PATH%d=%s
+	egcpops 実行ファイル、指定しないとegcpops起動時のプログラム名になる
+	(多くの場合 ./egcpops、パスが通ってれば egcpops)
+	フルパス指定か、ホームからの相対指定
+EGC_CONFIG%d=%s
+	各拠点における本ファイルの配置位置、指定しないと egcpops 起動時の位置、
+	起動時に指定してない場合は egc.confになる
+	フルパス指定か、ホームからの相対指定
+
+クライアント用環境設定、ジョブサブミット時に指定すること
+EGC_CONFIG=%s
+	クライアントが読み込むコンフィグファイルの位置（基本的にはpops が読み込むものの位置)	
+EGC_JID=%d
+	クライアントが確認する環境変数(とりあえずジョブ投入スクリプトで設定するとか)
+
+	
+	
+
+	
+EGC_INTRA_HOST_IP%d=%s
+	(for socket)拠点の内部からみたログインノードのIP
+EGC_INTRA_HOST_PORT%d=%d
+	(for socket)拠点内部からログインノードに接続するポート名
+	
