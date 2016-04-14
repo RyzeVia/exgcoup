@@ -1,0 +1,12 @@
+/*
+ * VERSION
+ *
+ *  Created on: 2016/04/13
+ *      Author: RyzeVia
+ */
+
+major=0
+minor=1
+release=0
+
+libegc_version=0:0:0
