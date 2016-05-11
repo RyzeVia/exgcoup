@@ -1,5 +1,6 @@
 bin_PROGRAMS = egcpops
 lib_LTLIBRARIES = libegc.la
+include_HEADERS = ${top_srcdir)/include/egclib.h
 
 libegc_la_SOURCES = EGC_comm.c EGC_event.c EGC_lib.c EGC_utils.c \
           ASP_debug.c \
