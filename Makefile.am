@@ -3,8 +3,8 @@
 # $COPYRIGHT$
 #
 
-SUBDIRS = src sample doc helper include
-EXTRA_DIST = README INSTALL VERSION ChangeLog NEWS AUTHORS COPYING 
+SUBDIRS = src sample 
+EXTRA_DIST = README INSTALL VERSION ChangeLog NEWS AUTHORS COPYING include helper doc 
 ACLOCAL_AMFLAGS = -I config
 
 
