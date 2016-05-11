@@ -5,6 +5,7 @@
 
 AM_CPPFLAGS = -I$(top_builddir)/include -I$(top_srcdir)/include
 AM_LDFLAGS = -lrt -levent
+EXTRA_DIST = ca.sh cb.sh config config.fx
 LDADD = \
         $(top_builddir)/src/libegc.la
 
