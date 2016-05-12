@@ -157,11 +157,12 @@ int EGC_recv(int src, char* buf, int bufsize){
 		}
 //		lseek(shdr->fd, shdr->minfo.nbytes+sizeof(p_msginfo), SEEK_SET);
 //		test code
+/*
 		int i;
 		for(i = 0; i<5; i++){
 			fprintf(stderr, "%d\n", ((int*)minfo)[i]);
 		}
-
+*/
 		DEBUGF(DEBUG_LEVEL_INFO, "INFO:Read buf(%p) to %p\n", buf, pbuf);
 		if(head.nbytes >= ctnsize){
 			rv = BREAD(shdr->fd, pbuf, ctnsize);
