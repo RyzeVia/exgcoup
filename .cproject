@@ -45,9 +45,19 @@
 							</tool>
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.57677869" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug"/>
 							<tool id="cdt.managedbuild.tool.gnu.assembler.exe.debug.1116097078" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.exe.debug">
-								<option id="gnu.both.asm.option.include.paths.866961767" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath"/>
+								<option id="gnu.both.asm.option.include.paths.866961767" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths"/>
 								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.894947547" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
+						</toolChain>
+					</folderInfo>
+					<folderInfo id="cdt.managedbuild.config.gnu.exe.debug.1510907875.1092134937" name="/" resourcePath="sample">
+						<toolChain id="cdt.managedbuild.toolchain.gnu.exe.debug.884856470" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.exe.debug" unusedChildren="">
+							<tool id="cdt.managedbuild.tool.gnu.archiver.base.1219038510" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base.917621507"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.120016007" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1727826182"/>
+							<tool id="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.255189954" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1774199793"/>
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.exe.debug.1163169197" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.exe.debug.1730811029"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.1641849310" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.exe.debug.57677869"/>
+							<tool id="cdt.managedbuild.tool.gnu.assembler.exe.debug.703563732" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.exe.debug.1116097078"/>
 						</toolChain>
 					</folderInfo>
 				</configuration>
