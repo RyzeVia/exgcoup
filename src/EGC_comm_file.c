@@ -166,6 +166,9 @@ EGC_COMM_STATE PEGC_comm_file_connect(p_commhdr *hdr){
 //	rv = write(fd, hdr->mbuf->buf, EGC_FLISTEN_BUF);
 
 	// send datapath name to listener file
+	// Listener file was shared, then it need lock.
+
+
 	BWRITE(fd, hdr->addr.name, EGC_FLISTEN_BUF);
 
 // Open Data file
@@ -412,7 +415,7 @@ static int SPEGC_comm_file_open(p_commhdr *hdr){
 	}
 
 	DEBUGF(DEBUG_LEVEL_INFO, "INFO: open file with name:%s\n", fn);
-	fd = open(fn, O_RDWR | O_CREAT, S_IRWXU);
+	fd = open(fn, O_RDWR | O_CREAT | O_APPEND, S_IRWXU);
 	ERRCHK(fd < 0, "comm_file_setup: open");
 
 	aio->aio_fildes = fd;
