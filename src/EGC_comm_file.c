@@ -284,6 +284,9 @@ EGC_COMM_HDL PEGC_comm_file_read(p_commhdr *hdr){
 		ERRORF("AIO canceled: Unexpected cancel\n");
 		ERROR_EXIT();
 		break;
+	case EAGAIN:
+		aio_read(hdr->mbuf->ext.aio);
+		break;
 	case 0:
 		DEBUGF(DEBUG_LEVEL_INFO, "INFO: AIO_ERROR return 0(complete) on %d\n", hdr->mbuf->ext.aio->aio_fildes);
 		rv = SPEGC_comm_file_aio_eofcheck(hdr);

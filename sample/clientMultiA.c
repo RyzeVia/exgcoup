@@ -18,23 +18,28 @@
 
 
 int main(int argc, char** argv){
-        int rank = 1;
+        int rank = 1, count, np =1;
         char *buf;
 
 //      int i;
 //      for(i = 0; i < INTCOUNT; i++){
 //              buf[i] = i;
 //      }
-
+        count = atoi(argv[1]);
         MALLOC(char*, buf, BCOUNT);
         setenv("EGC_JID", "0", 1);
 
+additional:;
         int pid = fork();
         if(pid == 0){
                 rank = 1;
+                np++;
+                if(np != count) goto additional;
         }else{
-                rank = 2;
+                rank = 1 + np;
         }
+
+
 
         EGC_init(rank);
 
@@ -53,7 +58,9 @@ int main(int argc, char** argv){
 
         TIMESTAMPF(stderr, "finish sending\n%d", rank);
 
-        if(pid != 0){ waitpid(pid);}
+        if(pid != 0){
+        	for(i = 1; i < count; i++){wait();}
+        }
         return EXIT_SUCCESS;
 
 }

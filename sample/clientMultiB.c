@@ -27,12 +27,15 @@ int main(int argc, char** argv){
         MALLOC(char*, buf, BCOUNT);
         MALLOC(char*, buf2, BCOUNT);
 
-        int pid = fork();
-        if(pid == 0){
-                rank = 1;
-        }else{
-                rank = 2;
-        }
+additional:;
+	int pid = fork();
+	if(pid == 0){
+		rank = 1;
+		np++;
+		if(np != count) goto additional;
+	}else{
+		rank = 1 + np;
+	}
 
 
 
@@ -51,7 +54,9 @@ int main(int argc, char** argv){
 
         TIMESTAMPF(stderr, "client B: second reading%d\n", rank);
 
-        if(pid != 0){ waitpid(pid);}
+        if(pid != 0){
+        	for(i = 1; i < count; i++){wait();}
+        }
         return EXIT_SUCCESS;
 
 }
